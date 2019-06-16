@@ -2,7 +2,16 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-export const ContactSchema = new Schema({
+export const hrSchema = new Schema({
+  employeeID:{
+    type: String, required: true, index: { unique: true }
+  },
+  securityLevel:{
+    type: Number
+  },
+  GroupID:{
+    type: String
+  },
   firstName:{
     type: String,
     required: 'Enter first name'
@@ -17,11 +26,23 @@ export const ContactSchema = new Schema({
   email:{
     type: String
   },
-  group:{
+  phone:{
+    type: Number
+  },
+  title:{
     type: String
   },
+  department:{
+    type: String
+  },
+  salary:{
+    type: Number
+  },
   password:{
-    type: password
+    type: String, required: true
+  },
+  created_date: {
+    type: Date,
+    default: Date.now
   }
-
 });

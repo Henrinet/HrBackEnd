@@ -1,3 +1,5 @@
+import { addNewHr } from "../controllers/hrController";
+
 const routes = (app) => {
   app.route('/contact')
   .get((req,res,next)=>{
@@ -9,9 +11,8 @@ const routes = (app) => {
     res.send('get request succesfully!');
   })
   
-
-  .post((req,res) =>
-  res.send('post request succesfully!'));
+  // POST Endpoint
+  .post(addNewHr);
 
   app.route('/contact/:contactID')
   .put((req,res) =>

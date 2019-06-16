@@ -8,6 +8,7 @@ const PORT = 3000;
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/hrBackEnd',{ useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
